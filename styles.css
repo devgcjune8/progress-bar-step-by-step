@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --border-fill-line: rgb(2, 24, 48);
+    --border-empty-line: rgb(19, 112, 112);
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(rgb(34, 34, 121), rgb(35, 146, 131));
+}
+
+.root {
+    text-align: center;
+}
+
+.prog-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 80vw;
+    max-width: 500px;
+}
+
+.prog-container::before {
+    content: "";
+    background-color: var(--border-empty-line);
+    position: absolute;
+    top: 50%;
+    height: 5px;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--border-fill-line);
+    position: absolute;
+    top: 50%;
+    height: 5px;
+    transform: translateY(-50%);
+    left: 0;
+    width: 5%;
+    z-index: -1;
+    transition: 0.5s ease-in;
+}
+
+.squircle {
+    background-color: rgb(196, 251, 255);
+    color: rgb(11, 11, 37);
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-empty-line);
+    transition: 0.5s ease;
+}
+
+.squircle.ongoing {
+    border-color: var(--border-fill-line);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.btn {
+    background-color: var(--border-fill-line);
+    color: aliceblue;
+    border: none;
+    margin-top: 40px;
+    padding: 15px 30px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.90);
+}
+.btn:focus {
+    outline: 0;
+}
+.btn:disabled {
+    background-color: var(--border-empty-line);
+    cursor: not-allowed;
+}
